@@ -35,5 +35,12 @@ nosetests.xml
 .project
 .pydevproject
 
+# SQLite db and migration scheme
+app.db
+app.db-journal
+
+# Virtualenv
 venv/**
+
+# IDE data
 .idea/**
