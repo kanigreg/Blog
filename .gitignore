@@ -44,3 +44,6 @@ venv/**
 
 # IDE data
 .idea/**
+
+#logs
+/logs/**
