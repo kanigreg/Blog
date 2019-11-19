@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-11-16 15:38+0500\n"
+"POT-Creation-Date: 2019-11-19 12:51+0500\n"
 "PO-Revision-Date: 2019-11-16 15:24+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -47,7 +47,7 @@ msgstr "Почта"
 msgid "Repeat Password"
 msgstr "Повторите пароль"
 
-#: application/forms.py:20 application/routes.py:133
+#: application/forms.py:20 application/routes.py:136
 #: application/templates/register.html:5
 msgid "Register"
 msgstr "Регистрация"
@@ -84,67 +84,75 @@ msgstr "Запрос на смену пароля"
 msgid "Replay Password"
 msgstr "Повторите пароль"
 
-#: application/routes.py:29
+#: application/routes.py:32
 msgid "Your post now is live!"
 msgstr "Ваша запсись сохранена"
 
-#: application/routes.py:37
+#: application/routes.py:40
 msgid "Home page"
 msgstr "Главная"
 
-#: application/routes.py:50 application/templates/base.html:31
+#: application/routes.py:53 application/templates/base.html:46
 msgid "Explore"
 msgstr "Глобал"
 
-#: application/routes.py:76
+#: application/routes.py:79
 msgid "Invalid username or password"
 msgstr "Неверное имя или пароль"
 
-#: application/routes.py:83
+#: application/routes.py:86
 msgid "Sign in"
 msgstr "Войти"
 
-#: application/routes.py:101
+#: application/routes.py:104
 msgid "Check you email for the instructions to reset your password"
 msgstr "Проверте почту и следуйте инструкциям чтобы сбросить пароль"
 
-#: application/routes.py:103
+#: application/routes.py:106
 msgid "Reset Password"
 msgstr "Сброс пароля"
 
-#: application/routes.py:117
+#: application/routes.py:120
 msgid "Your password has been reset"
 msgstr "Ваш пароль был изменен"
 
-#: application/routes.py:144
+#: application/routes.py:147
 msgid "You change have been changed"
 msgstr "Ваши изменения сохранены"
 
-#: application/routes.py:149
+#: application/routes.py:152
 msgid "Edit Profile"
 msgstr "Изменить профиль"
 
-#: application/routes.py:157 application/routes.py:173
+#: application/routes.py:160 application/routes.py:176
 #, python-format
 msgid "User %(username)s not found."
 msgstr "Пользователь %(username)s не найден"
 
-#: application/routes.py:160
+#: application/routes.py:163
 msgid "You can not follow yourself!"
 msgstr "Вы не можете подписаться на себя!"
 
-#: application/routes.py:164
+#: application/routes.py:167
 #, python-format
 msgid "You are following %(username)s!"
 msgstr "Вы подписаны на %(username)s!"
 
-#: application/routes.py:176
+#: application/routes.py:179
 msgid "You can not unfollow yourself!"
 msgstr "Вы не можете отписаться от себя!"
 
-#: application/routes.py:180
+#: application/routes.py:183
 #, python-format
 msgid "You are unfollow %(username)s."
+msgstr "Вы отписались от %(username)s."
+
+#: application/translate.py:10 application/translate.py:23
+msgid "Error: the translation service is not configured."
+msgstr ""
+
+#: application/translate.py:17 application/translate.py:29
+msgid "Error: the translate server failed."
 msgstr ""
 
 #: application/templates/_post.html:12
@@ -152,36 +160,44 @@ msgstr ""
 msgid "%(username)s said %(when)s"
 msgstr "%(username)s сказал %(when)s"
 
-#: application/templates/base.html:10
+#: application/templates/_post.html:22
+msgid "Translate"
+msgstr "Перевести"
+
+#: application/templates/base.html:17
+msgid "Error: could not contact server."
+msgstr ""
+
+#: application/templates/base.html:25
 #, python-format
 msgid "%(title)s - Microblog"
 msgstr "%(title)s - Microblog"
 
-#: application/templates/base.html:12
+#: application/templates/base.html:27
 msgid "Welcome to Microblog"
 msgstr "Добро пожаловать на Microblog"
 
-#: application/templates/base.html:21
+#: application/templates/base.html:36
 msgid "Toggle navigation"
 msgstr "Навигация"
 
-#: application/templates/base.html:26
+#: application/templates/base.html:41
 msgid "Microblog"
 msgstr "Microblog"
 
-#: application/templates/base.html:30
+#: application/templates/base.html:45
 msgid "Home"
 msgstr "Главная"
 
-#: application/templates/base.html:35
+#: application/templates/base.html:50
 msgid "Login"
 msgstr "Воход"
 
-#: application/templates/base.html:37
+#: application/templates/base.html:52
 msgid "Profile"
 msgstr "Профиль"
 
-#: application/templates/base.html:38
+#: application/templates/base.html:53
 msgid "Logout"
 msgstr "Выйти"
 

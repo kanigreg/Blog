@@ -1,13 +1,15 @@
 from application import app, db
-from flask import render_template, redirect, flash, url_for, request, g
+from flask import render_template, redirect, flash, url_for, request, g, jsonify
 from werkzeug.urls import url_parse
 from application.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm, ResetPasswordRequestForm
 from application.forms import ResetPasswordForm
 from application.models import User, Post
 from application.email import send_password_reset_email
+from application.translate import translate
 from flask_login import current_user, login_user, logout_user, login_required
 from datetime import datetime
 from flask_babel import _, get_locale
+from guess_language import guess_language
 
 
 @app.before_request
@@ -24,7 +26,10 @@ def before_request():
 def index():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(body=form.post.data, author=current_user)
+        language = guess_language(form.post.data)
+        if language == 'UNKNOWN' or len(language) > 5:
+            language = ''
+        post = Post(body=form.post.data, author=current_user, language=language)
         db.session.add(post)
         db.session.commit()
         flash(_('Your post now is live!'))
@@ -180,6 +185,14 @@ def unfollow(username):
     db.session.commit()
     flash(_('You are unfollow %(username)s.', username=username))
     return redirect(url_for('user', username=username))
+
+
+@app.route('/translate', methods=['POST'])
+@login_required
+def translate_text():
+    return jsonify({'text': translate(request.form['text'],
+                                      request.form['source_language'],
+                                      request.form['dest_language'])})
 
 
 if __name__ == '__main__':
