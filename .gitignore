@@ -45,5 +45,8 @@ venv/**
 # IDE data
 .idea/**
 
-#logs
+# logs
 /logs/**
+
+# Configs
+/.env
