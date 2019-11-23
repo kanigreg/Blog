@@ -43,15 +43,13 @@ YANDEX_TRANSLATOR_KEY=<API ключ яндекса>
 
 # Движок полнотекстового поиска
 ELASTICSEARCH_URL=<URL Elasticsearch>
-
-# Опционально
-ELASTICSEARCH_USERNAME=<Логин Elasticsearch>
-ELASTICSEARCH_PASSWORD=<Пароль Elasticsearch>
 ```
 
 ### Запуск
 
 ```shell script
 export FLASK_APP=microblog.py
+flask db upgrade
+flask translation compile
 flask run
 ```
